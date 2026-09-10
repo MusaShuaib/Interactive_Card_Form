@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Interactive card details form</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+
+    <!-- =====================================================
+         CARD SECTION
+         ===================================================== -->
+
+    <div class="card-container">
+
+      <!-- BACK OF CARD -->
+      <div class="card-back">
+
+        <img
+          src="images/bg-card-back.png"
+          alt="Back of credit card"
+        />
+
+        <!-- CVC displayed on the card -->
+        <span class="card-cvc">000</span>
+
+      </div>
+
+
+      <!-- FRONT OF CARD -->
+      <div class="card-front">
+
+        <!-- Card logo -->
+        <div class="card-logo">
+          <img
+            src="images/card-logo.svg"
+            alt="Card logo"
+          />
+        </div>
+
+        <!-- Card background -->
+        <img
+          src="images/bg-card-front.png"
+          alt="Front of credit card"
+        />
+
+        <!-- Card number -->
+        <span class="card-holder-number">
+          0000 0000 0000 0000
+        </span>
+
+        <!-- Cardholder name -->
+        <span class="card-holder-name">
+          JANE APPLESEED
+        </span>
+
+        <!-- Expiry date -->
+        <span class="card-expiry">
+          00/00
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FORM SECTION
+         ===================================================== -->
+
+    <form class="card-form" id="cardForm">
+
+      <!-- FORM INPUTS -->
+      <div class="card-details">
+
+        <!-- CARDHOLDER NAME -->
+        <div class="form-group">
+
+          <label for="card-holder">
+            CARD HOLDER NAME
+          </label>
+
+          <input
+            type="text"
+            id="card-holder"
+            placeholder="e.g. Jane Appleseed"
+          />
+
+          <span class="error-message"></span>
+
+        </div>
+
+
+        <!-- CARD NUMBER -->
+        <div class="form-group">
+
+          <label for="card-number">
+            CARD NUMBER
+          </label>
+
+          <input
+            type="text"
+            id="card-number"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="19"
+          />
+
+          <span class="error-message"></span>
+
+        </div>
+
+
+        <!-- EXPIRY DATE + CVC -->
+        <div class="form-row">
+
+          <!-- EXPIRY DATE -->
+          <div class="expiry-group">
+
+            <label>
+              EXP. DATE (MM/YY)
+            </label>
+
+            <div class="card-expiration-date-input">
+
+              <div>
+                <input
+                  type="text"
+                  id="card-expiration-date"
+                  placeholder="MM"
+                  maxlength="2"
+                />
+
+                <span class="error-message"></span>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  id="card-expiration-year"
+                  placeholder="YY"
+                  maxlength="2"
+                />
+
+                <span class="error-message"></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CVC -->
+          <div class="cvc-group">
+
+            <label for="card-cvc">
+              CVC
+            </label>
+
+            <input
+              type="text"
+              id="card-cvc"
+              placeholder="e.g. 123"
+              maxlength="3"
+            />
+
+            <span class="error-message"></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONFIRM BUTTON -->
+      <button
+        type="submit"
+        id="submitBtn"
+      >
+        Confirm
+      </button>
+
+
+      <!-- =================================================
+           COMPLETED STATE
+           ================================================= -->
+
+      <div class="completed-state">
+
+        <p class="thank-you-message">
+          Thank you! We've added your card details
+        </p>
+
+        <button
+          type="button"
+          id="continueBtn"
+        >
+          Continue
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="attribution">
+
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">
+        Frontend Mentor
+      </a>.
+
+      <br />
+
+      Coded by
+      <a href="#">
+        DE FIDEX
+      </a>.
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

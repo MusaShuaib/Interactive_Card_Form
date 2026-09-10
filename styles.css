@@ -1,0 +1,464 @@
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+  --main-bg-color: hsl(0, 0%, 100%);
+  --main-text-color: hsl(278, 68%, 11%);
+  --main-text-color-light: hsl(279, 6%, 55%);
+  --main-accent-color: hsl(278, 68%, 11%);
+  --error-color: hsl(0, 100%, 66%);
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+
+/* =========================================================
+   CARD CONTAINER
+   ========================================================= */
+
+.card-container {
+  position: relative;
+
+  background-image: url("./images/bg-main-mobile.png");
+  background-size: cover;
+  background-position: center;
+
+  height: 60vh;
+}
+
+
+/* =========================================================
+   FRONT CARD
+   ========================================================= */
+
+.card-front {
+  position: absolute;
+
+  width: min(85vw, 450px);
+
+  top: 50%;
+  left: 5%;
+
+  z-index: 2;
+}
+
+
+.card-front > img {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================================
+   CARD LOGO
+   ========================================================= */
+
+.card-logo {
+  position: absolute;
+
+  top: 10%;
+  left: 8%;
+
+  width: 18%;
+
+  z-index: 3;
+}
+
+
+.card-logo img {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.card-holder-number {
+  position: absolute;
+
+  left: 10%;
+  bottom: 28%;
+
+  width: 80%;
+
+  color: var(--main-bg-color);
+
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
+  letter-spacing: 0.1rem;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CARDHOLDER NAME
+   ========================================================= */
+
+.card-holder-name {
+  position: absolute;
+
+  left: 10%;
+  bottom: 8%;
+
+  color: var(--main-bg-color);
+
+  font-size: clamp(0.6rem, 2.5vw, 0.85rem);
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   EXPIRY DATE
+   ========================================================= */
+
+.card-expiry {
+  position: absolute;
+
+  right: 10%;
+  bottom: 8%;
+
+  color: var(--main-bg-color);
+
+  font-size: clamp(0.6rem, 2.5vw, 0.85rem);
+}
+
+
+/* =========================================================
+   BACK CARD
+   ========================================================= */
+
+.card-back {
+  position: absolute;
+
+  width: min(85vw, 450px);
+
+  top: 10%;
+  right: 5%;
+
+  z-index: 1;
+}
+
+
+.card-back img {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================================
+   CVC
+   ========================================================= */
+
+.card-cvc {
+  position: absolute;
+
+  top: 43%;
+  right: 13%;
+
+  color: var(--main-bg-color);
+
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.card-form {
+  width: min(90%, 450px);
+
+  margin: 4rem auto 0;
+
+  padding: 1rem;
+}
+
+
+/* =========================================================
+   FORM DETAILS
+   ========================================================= */
+
+.card-details {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+
+.form-group label,
+.expiry-group label,
+.cvc-group label {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input[type="text"] {
+  width: 100%;
+
+  padding: 0.8rem;
+
+  border: 1px solid var(--main-text-color-light);
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+}
+
+
+input[type="text"]:focus {
+  border-color: var(--main-text-color);
+}
+
+
+/* =========================================================
+   ERROR INPUT
+   ========================================================= */
+
+input.error {
+  border: 1px solid var(--error-color);
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.error-message {
+  display: block;
+
+  min-height: 1rem;
+
+  margin-top: 0.3rem;
+
+  color: var(--error-color);
+
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   EXPIRY + CVC ROW
+   ========================================================= */
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+
+  width: 100%;
+}
+
+
+.expiry-group {
+  width: 50%;
+}
+
+
+.cvc-group {
+  width: 50%;
+}
+
+
+/* =========================================================
+   MONTH + YEAR
+   ========================================================= */
+
+.card-expiration-date-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+.card-expiration-date-input > div {
+  width: 50%;
+}
+
+
+/* =========================================================
+   CONFIRM BUTTON
+   ========================================================= */
+
+#submitBtn {
+  width: 100%;
+
+  padding: 0.9rem;
+
+  background-color: var(--main-accent-color);
+  color: var(--main-bg-color);
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+
+#submitBtn:hover {
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   COMPLETED STATE
+   ========================================================= */
+
+.completed-state {
+  display: none;
+
+  text-align: center;
+}
+
+
+.thank-you-message {
+  margin-bottom: 1.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+#continueBtn {
+  width: 100%;
+
+  padding: 0.9rem;
+
+  background-color: var(--main-accent-color);
+  color: var(--main-bg-color);
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer.attribution {
+  padding: 1rem;
+
+  text-align: center;
+
+  font-size: 0.8rem;
+
+  color: var(--main-text-color-light);
+}
+
+
+footer.attribution a {
+  color: var(--main-text-color);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+  }
+
+
+  .card-container {
+    width: 40%;
+    height: 100vh;
+
+    background-image: url("./images/bg-main-desktop.png");
+  }
+
+
+  .card-front {
+    top: 30%;
+    left: 0;
+
+    transform: translateY(-50%);
+  }
+
+
+  .card-back {
+    top: 35%;
+    right: auto;
+    left: 5%;
+  }
+
+
+  .card-form {
+    width: 40%;
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 2rem;
+  }
+
+
+  footer.attribution {
+    position: absolute;
+
+    bottom: 1rem;
+    left: 0;
+
+    width: 40%;
+  }
+
+}
